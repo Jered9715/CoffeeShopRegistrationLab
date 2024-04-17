@@ -5,7 +5,19 @@ namespace CoffeeShopRegistration.Controllers
 {
     public class UserRegistrationController : Controller
     {
-        static List<User> _users = new List<User>();
+        static List<User> _users = new List<User>
+        {
+            new User
+            {
+            Id = 1,
+            FirstName = "Jered",
+            LastName = "OGrady",
+            Email = "Jered9715@gmail.com",
+            BirthDate = DateTime.Parse("1997-02-03"),
+            Password = "123Password"
+            }
+
+        };
 
         [HttpGet]
         public IActionResult Index()
@@ -13,6 +25,13 @@ namespace CoffeeShopRegistration.Controllers
             return View(_users);
         }
 
+        [HttpGet]
+        public IActionResult Registration()
+        {
+            return View();
+        }
+        
+        
         [HttpPost]
         public IActionResult Registration(User user)
         {

@@ -13,7 +13,7 @@ namespace CoffeeShopRegistration.Models
         public string FirstName { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "First Name")]
+        [Display(Name = "Last Name")]
         public string? LastName { get; set; }
 
         [Required(ErrorMessage = "Email is needed")]

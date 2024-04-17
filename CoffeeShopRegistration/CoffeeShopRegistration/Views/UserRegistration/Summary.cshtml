@@ -1,1 +1,11 @@
-﻿
+﻿@model User;
+<h2>Summary Of New User</h2>
+
+<div>
+    <h3>@Model.FirstName @Model.LastName has been added</h3>
+
+</div>
+
+<div>
+    @Html.ActionLink("back to user list","Index","UserRegistration")
+</div>
