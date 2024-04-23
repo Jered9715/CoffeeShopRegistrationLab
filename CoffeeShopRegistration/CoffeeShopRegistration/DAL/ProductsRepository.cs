@@ -1,4 +1,6 @@
-﻿namespace CoffeeShopRegistration.DAL
+﻿using CoffeeShopRegistration.Models;
+
+namespace CoffeeShopRegistration.DAL
 {
     public class ProductsRepository
     {
@@ -27,7 +29,7 @@
 
         public void DeleteProduct(int id)
         {
-            Product product = _context.Products.Find(id);
+            var product = _context.Products.Find(id);
             if (product != null)
             {
                 _context.Products.Remove(product);

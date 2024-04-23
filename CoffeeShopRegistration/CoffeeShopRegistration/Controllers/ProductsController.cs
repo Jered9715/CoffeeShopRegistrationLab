@@ -1,4 +1,5 @@
 ﻿using CoffeeShopRegistration.DAL;
+using CoffeeShopRegistration.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoffeeShopRegistration.Controllers
@@ -12,9 +13,10 @@ namespace CoffeeShopRegistration.Controllers
             _repo = new ProductsRepository(context);
         }
         
-        public IActionResult DisplayProducts()
+        public IActionResult Index()
         {
-            return View();
+            List<Product> products = _repo.GetProducts();
+            return View(products);
         }
     }
 }
